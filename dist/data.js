@@ -148,3 +148,76 @@ export const projects=[
     "#f3b6a2"
   ]
 ];
+
+export const press=[
+  {
+    "id": "bress-maddyness",
+    "source": "Maddyness",
+    "date": "15 mars 2016",
+    "isoDate": "2016-03-15",
+    "title": "Bress HealthCare veut faire bouger l’e-santé mondiale",
+    "description": "Maddyness revient sur les partenariats annoncés par Bress Healthcare et son développement en France et à l’international.",
+    "url": "https://www.maddyness.com/2016/03/15/bress-healthcare-e-sante/",
+    "imageAlt": "L’équipe de Bress Healthcare réunie pour une photo de groupe.",
+    "photoCredit": "Photo publiée par Maddyness",
+    "image": "assets/press/bress-maddyness-photo.jpg",
+    "screenshot": "assets/press/bress-maddyness.jpg",
+    "captureTop": 180
+  },
+  {
+    "id": "bress-midilibre",
+    "source": "Midi Libre",
+    "date": "8 mars 2016",
+    "isoDate": "2016-03-08",
+    "title": "Montpellier : Bress Healthcare, le diagnostic santé en ligne",
+    "description": "Présentation du logiciel de Bress Healthcare, conçu pour faciliter les échanges et l’aide à la décision entre médecins.",
+    "url": "https://www.midilibre.fr/2016/03/08/bress-healthcare-le-diagnostic-sante-en-ligne,1296798.php",
+    "imageAlt": "L’équipe de Bress Healthcare autour d’un ordinateur affichant son logo.",
+    "photoCredit": "Photo : Michael Esdourrubailh / Midi Libre",
+    "image": "assets/press/bress-midilibre-photo.jpg",
+    "screenshot": "assets/press/bress-midilibre.jpg",
+    "captureTop": 460
+  },
+  {
+    "id": "protheses",
+    "source": "Midi Libre",
+    "date": "1er juin 2014",
+    "isoDate": "2014-06-01",
+    "title": "Montpellier : trois jeunes inventent un casque neuronal",
+    "description": "L’article raconte le prototype de prothèse commandée par la pensée créé par des étudiants montpelliérains, dont Lou Husson.",
+    "url": "https://www.midilibre.fr/2014/06/01/les-protheses-controlees-par-la-pensee-c-est-fait,868525.php",
+    "imageAlt": "Trois étudiants présentent un prototype de prothèse et un casque neuronal.",
+    "photoCredit": "Photo : Christine Palasz / Midi Libre",
+    "image": "assets/press/protheses-photo.jpg",
+    "screenshot": "assets/press/protheses.jpg",
+    "captureTop": 500
+  },
+  {
+    "id": "socialbet",
+    "source": "Midi Libre",
+    "date": "26 mai 2014",
+    "isoDate": "2014-05-26",
+    "title": "Montpellier : Socialbet.fr parie sur la forme des pronostiqueurs",
+    "description": "Portrait de Socialbet.fr, une plateforme montpelliéraine pour suivre les performances des pronostiqueurs sportifs.",
+    "url": "https://www.midilibre.fr/2014/05/26/socialbet-fr-parie-sur-la-forme-des-pronostiqueurs,865739.php",
+    "imageAlt": "Une tablette et un ordinateur affichant le site Socialbet.",
+    "photoCredit": "Photo : Christophe Fortin / Midi Libre",
+    "image": "assets/press/socialbet-photo.jpg",
+    "screenshot": "assets/press/socialbet.jpg",
+    "captureTop": 500
+  },
+  {
+    "id": "tsunamail",
+    "source": "Midi Libre",
+    "date": "17 avril 2014",
+    "isoDate": "2014-04-17",
+    "title": "Montpellier : Tsunamail, la boîte mail que Google nous envie",
+    "description": "En 48 heures, 45 étudiants d’Epitech Montpellier ont conçu une messagerie qui classe les échanges par contact.",
+    "url": "https://www.midilibre.fr/2014/04/16/tsunamail-la-boite-mail-que-google-nous-envie-epitech-le-monde-reel-du-virtuel,849215.php",
+    "imageAlt": "Lou Husson utilise un ordinateur portable dans les locaux d’Epitech.",
+    "photoCredit": "Photo : Alexandre Dimou / Midi Libre",
+    "image": "assets/press/tsunamail-photo.jpg",
+    "screenshot": "assets/press/tsunamail.jpg",
+    "captureTop": 500
+  }
+];
