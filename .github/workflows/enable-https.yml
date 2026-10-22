@@ -1,0 +1,60 @@
+name: Enable HTTPS for louhusson.com
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: write
+
+concurrency:
+  group: enable-pages-https
+  cancel-in-progress: false
+
+jobs:
+  enable-https:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      PAGES_DOMAIN: louhusson.com
+    steps:
+      - name: Enable HTTPS when the certificate is ready
+        shell: bash
+        run: |
+          for attempt in $(seq 1 330); do
+            settings="$(gh api "repos/$GH_REPO/pages")"
+            domain="$(jq -r '.cname // ""' <<< "$settings")"
+            if [ "$domain" != "$PAGES_DOMAIN" ]; then
+              echo "The Pages domain has changed. Stopping without changing its configuration."
+              exit 1
+            fi
+
+            state="$(jq -r '.https_certificate.state // "pending"' <<< "$settings")"
+            echo "Attempt $attempt: certificate=$state"
+            enforced="$(jq -r '.https_enforced' <<< "$settings")"
+            if [ "$enforced" != "true" ]; then
+              if result="$(gh api --method PUT "repos/$GH_REPO/pages" -F https_enforced=true 2>&1)"; then
+                enforced="$(gh api "repos/$GH_REPO/pages" --jq '.https_enforced')"
+              elif [[ "$result" != *"certificate"* ]]; then
+                printf '%s\n' "$result"
+                exit 1
+              fi
+            fi
+
+            if [ "$enforced" = "true" ]; then
+              if curl --fail --silent --show-error --location --max-time 30 \
+                  "https://$PAGES_DOMAIN/" --output /tmp/cv-page.html \
+                  && grep -q 'Lou Husson' /tmp/cv-page.html; then
+                headers="$(curl --silent --show-error --head --max-time 30 "http://$PAGES_DOMAIN/" | tr -d '\r')"
+                if grep -qi "^location: https://$PAGES_DOMAIN/" <<< "$headers"; then
+                  echo "HTTPS is enabled and the HTTP redirect is working."
+                  printf 'HTTPS enabled and verified: https://%s/\n' "$PAGES_DOMAIN" >> "$GITHUB_STEP_SUMMARY"
+                  exit 0
+                fi
+              fi
+            fi
+            sleep 60
+          done
+          echo "The certificate was not ready within the allotted time."
+          exit 1
