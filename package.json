@@ -1,0 +1,1 @@
+{"name":"lou-husson-cv","private":true,"type":"module","scripts":{"dev":"node server.mjs","check":"node --check dist/app.js && node --check server.mjs"},"dependencies":{"three":"0.180.0"}}
