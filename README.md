@@ -13,8 +13,22 @@ Puis ouvrir http://127.0.0.1:5173.
 
 Les contenus se trouvent dans `dist/data.js`. La version statique complète est dans `dist/`.
 
-## Publication
+## Publication sur OVH
 
-Chaque mise à jour de `main` est publiée par GitHub Actions sur GitHub Pages. Le domaine personnalisé est `louhusson.com`.
+L’hébergement prévu est l’offre OVH fournie avec `louhusson.com` : `louhusj.cluster129.hosting.ovh.net`. GitHub conserve le code source. Le déploiement automatique sur GitHub Pages a été retiré.
 
-Remplacer les enregistrements OVH actuels : sur `@`, créer quatre entrées `A` vers `185.199.108.153`, `185.199.109.153`, `185.199.110.153` et `185.199.111.153`, puis quatre entrées `AAAA` vers `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153` et `2606:50c0:8003::153`. Pour `www`, remplacer les entrées existantes par un `CNAME` vers `loukan42.github.io`. Une fois la propagation terminée, HTTPS peut être activé dans les réglages Pages du dépôt.
+Pour préparer le site sans connexion au serveur :
+
+```powershell
+.\scripts\Deploy-Ovh.ps1 -PrepareOnly
+```
+
+Pour le transférer, lancer la commande suivante dans un terminal interactif et saisir le mot de passe SFTP à l’invite native. Le script ne l’enregistre pas.
+
+```powershell
+.\scripts\Deploy-Ovh.ps1
+```
+
+Le script prépare les fichiers publics suivis dans Git, sauvegarde l’ancien dossier `www`, installe le site puis vérifie HTTPS directement sur le serveur OVH. `dist/.htaccess` redirige HTTP et `www` vers `https://louhusson.com/`.
+
+Après validation du transfert, la configuration DNS attendue est une entrée `A` sur `@` vers `51.91.236.255`, une entrée `AAAA` sur `@` vers `2001:41d0:301::29`, et un `CNAME` sur `www` vers `louhusson.com.`. Les entrées de messagerie sont conservées.

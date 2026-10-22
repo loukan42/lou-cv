@@ -1,4 +1,5 @@
 node_modules/
+.ovh-deploy/
 media-source/
 backups/
 reference-olivier/
