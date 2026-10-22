@@ -17,4 +17,4 @@ Les contenus se trouvent dans `dist/data.js`. La version statique complète est 
 
 Chaque mise à jour de `main` est publiée par GitHub Actions sur GitHub Pages. Le domaine personnalisé est `louhusson.com`.
 
-Les enregistrements DNS du domaine doivent pointer vers GitHub Pages : quatre enregistrements `A` sur `@` (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`) et un `CNAME` pour `www` vers `loukan42.github.io`. Une fois la propagation terminée, HTTPS peut être activé dans les réglages Pages du dépôt.
+Remplacer les enregistrements OVH actuels : sur `@`, créer quatre entrées `A` vers `185.199.108.153`, `185.199.109.153`, `185.199.110.153` et `185.199.111.153`, puis quatre entrées `AAAA` vers `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153` et `2606:50c0:8003::153`. Pour `www`, remplacer les entrées existantes par un `CNAME` vers `loukan42.github.io`. Une fois la propagation terminée, HTTPS peut être activé dans les réglages Pages du dépôt.
