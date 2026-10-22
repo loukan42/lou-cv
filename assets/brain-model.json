@@ -1,0 +1,13 @@
+{
+  "vertices": 81924,
+  "triangles": 163840,
+  "center": [
+    0.5251502990722656,
+    -13.762248992919922,
+    14.510700225830078
+  ],
+  "scale": 55,
+  "source": "https://github.com/aces/brainbrowser/blob/master/examples/models/brain-surface.obj.gz",
+  "license": "AGPL-3.0",
+  "attribution": "BrainBrowser · McGill Centre for Integrative Neuroscience"
+}
