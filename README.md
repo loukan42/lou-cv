@@ -15,7 +15,7 @@ Les contenus se trouvent dans `dist/data.js`. La version statique complète est 
 
 ## Publication sur OVH
 
-L’hébergement prévu est l’offre OVH fournie avec `louhusson.com` : `louhusj.cluster129.hosting.ovh.net`. GitHub conserve le code source. Le déploiement automatique sur GitHub Pages a été retiré.
+Le site est hébergé sur l’offre OVH fournie avec `louhusson.com` : `louhusj.cluster129.hosting.ovh.net`. GitHub conserve le code source. GitHub Pages et son déploiement automatique ont été désactivés.
 
 Pour préparer le site sans connexion au serveur :
 
@@ -31,4 +31,4 @@ Pour le transférer, lancer la commande suivante dans un terminal interactif et 
 
 Le script prépare les fichiers publics suivis dans Git, sauvegarde l’ancien dossier `www`, installe le site puis vérifie HTTPS directement sur le serveur OVH. `dist/.htaccess` redirige HTTP et `www` vers `https://louhusson.com/`.
 
-Après validation du transfert, la configuration DNS attendue est une entrée `A` sur `@` vers `51.91.236.255`, une entrée `AAAA` sur `@` vers `2001:41d0:301::29`, et un `CNAME` sur `www` vers `louhusson.com.`. Les entrées de messagerie sont conservées.
+La configuration DNS est une entrée `A` sur `@` vers `51.91.236.255`, une entrée `AAAA` sur `@` vers `2001:41d0:301::29`, et un `CNAME` sur `www` vers `louhusson.com.`. Les entrées de messagerie sont conservées.
