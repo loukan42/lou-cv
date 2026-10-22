@@ -1,0 +1,7 @@
+DirectoryIndex index.html
+Options -Indexes
+
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.louhusson\.com$ [NC]
+RewriteRule ^ https://louhusson.com%{REQUEST_URI} [R=301,L,NE]
