@@ -30,3 +30,33 @@ body[data-view=profil] main{height:auto;min-height:max(800px,calc(100svh - 166px
 .timeline-item .company-heading .role{margin:0;color:var(--cyan);font-size:.875rem;line-height:1.5}
 @media(max-width:600px){.company-logo{width:88px;height:68px}.company-heading{gap:14px}.company-heading h3{font-size:1.25rem}}
 @media(max-width:600px){.education-logo{width:76px;height:64px}.education-school{gap:14px}}
+
+/* Keep the original stage composition, with more room for the reading panel. */
+body[data-layout=reading] main{grid-template-columns:minmax(0,1.6fr) minmax(180px,.8fr) minmax(230px,.7fr)}
+body[data-layout=reading] .portrait-frame{position:relative;grid-area:1 / 2;align-self:center;justify-self:center;left:auto;top:auto;width:100%;max-width:400px;aspect-ratio:2/3;height:auto;transform:none;mask-image:linear-gradient(90deg,transparent,black 15%,black 80%,transparent),linear-gradient(0deg,transparent,black 20%,black 94%,transparent);mask-composite:intersect}
+body[data-layout=reading] .left-panel,body[data-layout=reading] .identity-panel{grid-row:1}
+body[data-layout=reading] .portrait-frame img,body[data-layout=reading] .portrait-frame video{transform:none}
+body[data-layout=reading] .portrait-frame img,body[data-layout=reading] .portrait-frame video,body[data-layout=reading] .portrait-frame canvas{object-fit:cover}
+body[data-layout=reading] .portrait-shade{background:linear-gradient(0deg,#080c10,transparent 35%),linear-gradient(90deg,#080c10 0%,#080c10 35%,#080c10d9 48%,transparent 60%,transparent 69%,#080c10cf 80%,#080c10 92%)}
+body[data-layout=reading] .left-panel{max-width:none;background:linear-gradient(90deg,#080c10f5 85%,#080c10dc)}
+body[data-layout=reading] .timeline-item p:last-child,body[data-layout=reading] .skill-group p,body[data-layout=reading] .contribution p{max-width:65ch}
+@media(min-width:1800px){body[data-layout=reading] main{grid-template-columns:minmax(0,1.6fr) minmax(220px,.8fr) minmax(280px,.7fr);gap:40px}}
+@media(max-width:1250px) and (min-width:1101px){body[data-layout=reading] main{grid-template-columns:minmax(0,1.5fr) minmax(180px,.65fr) minmax(220px,.7fr);gap:24px}}
+@media(max-width:1100px){
+ body[data-layout=reading] main{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);column-gap:24px}
+ body[data-layout=reading] .portrait-frame{max-width:246px}
+ body[data-layout=reading] .portrait-shade{height:420px;background:linear-gradient(0deg,#080c10,transparent 70%),linear-gradient(90deg,#080c10 35%,transparent 85%)}
+ body[data-layout=reading] .identity-panel{grid-area:1 / 1;min-height:340px;padding-top:32px;max-width:100%;width:100%}
+ body[data-layout=reading] .left-panel{grid-area:2 / 1 / 3 / -1;background:none}
+ body[data-layout=reading] .stage-bottom{grid-column:1 / -1}
+}
+@media(max-width:600px){
+ body[data-layout=reading] main{column-gap:16px}
+ body[data-layout=reading] .portrait-frame{max-width:187px}
+ body[data-layout=reading] .portrait-shade{height:320px}
+ body[data-layout=reading] .identity-panel{min-height:280px;padding-top:24px}
+ body[data-layout=reading] .identity-panel h1{font-size:2rem;margin:12px 0}
+ body[data-layout=reading] .identity-role{font-size:.875rem}
+ body[data-layout=reading] .socials{flex-direction:row;flex-wrap:wrap;width:auto;margin-top:16px}
+ body[data-layout=reading] .socials a{font-size:.75rem;padding:8px;gap:8px}
+}
