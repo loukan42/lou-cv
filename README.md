@@ -1,5 +1,7 @@
 # CV de Lou Husson
 
+[Voir le CV interactif](https://louhusson.com/)
+
 Site CV immersif en français : portrait animé, parcours professionnel, formation, compétences et projets présentés autour d’un cerveau en 3D.
 
 ## Lancer en local
