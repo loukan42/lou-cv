@@ -1,5 +1,5 @@
 import * as T from './assets/three.module.js';
-import {projects} from './data.js';
+import {projects} from './data.js?v=2026-10-25-2';
 
 // MNI coordinates are visual anchors, not boundaries of segmented regions.
 export const regions=[
