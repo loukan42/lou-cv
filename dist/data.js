@@ -146,6 +146,16 @@ export const projects=[
     "#322321",
     "#7d4538",
     "#f3b6a2"
+  ],
+  [
+    "Ultima Online RogueLite Idle RPG",
+    "JEU / ROGUELITE & IDLE RPG",
+    "Le joueur équipe son personnage et choisit ses tactiques avant d’explorer Britannia. Les combats sont automatiques et les compétences progressent hors ligne.",
+    "https://uo.louhusson.com/",
+    "UO",
+    "#292116",
+    "#8b6a2e",
+    "#f3d084"
   ]
 ];
 
